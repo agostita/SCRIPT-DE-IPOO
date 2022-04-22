@@ -1,5 +1,8 @@
 <?php
-include "Viaje.php";
+include "Viaje.php"; //los include los hacemos dentro del test y no de otra clase. 
+include "Pasajero.php";
+include "ResponsableV.php";
+
 
 /**************************************/
 /************** MODULOS ***************/
@@ -80,6 +83,14 @@ function verificadorInt($dato)
 /********* PROGRAMA PRINCIPAL *********/
 /**************************************/
 
+//viaje 1
+$objPasajero[0]= new Pasajero("Raúl", "Mishi", 37965417, 29958463);
+$objPasajero[1]= new Pasajero("Ricardo", "Caniche", 35965417, 29958468);
+//viaje 2
+$objPasajero[0]= new Pasajero("fran", "martin", 37965416, 29958487);
+$objPasajero[1]= new Pasajero("pedro", "alberti", 35965419, 299584565);
+
+$objResponsable= new ResponsableV("Román", "Riquelme", 10, 9);
 
 //Este programa ejecuta segun la opcion elegida del usuario la secuencia de pasos a seguir
 echo "Bienvenido a su viaje"."\n";
@@ -157,8 +168,8 @@ switch ($opcion) { //Según lo visto en clase, switch es una instrucción de est
 
     case 5: 
         separador();
-        $superaCapacidad = $objViaje->superaCapacidad();
-        if($superaCapacidad){
+        $capacidad = $objViaje->hayCapacidad();
+        if($capacidad){
             echo "Ingrese cuantos pasajeros nuevos ingresaran al viaje: ";
             $pasajerosNuevos = trim(fgets(STDIN));
             $cantidadAumentada = $objViaje->cantidadPasajeros() + $pasajerosNuevos;
