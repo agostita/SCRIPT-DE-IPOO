@@ -77,10 +77,10 @@ class ResponsableV{
     public function __toString()
     {
         
-        return "Nombre responsable del viaje: ".$this->getNombre()."\n".
+        return "\n"."Nombre del responsable: ".$this->getNombre()."\n".
         "Apellido responsable del viaje: ".$this->getApellido()."\n".
-        "Número de empleado responsable del viaje: ".$this->getNmroEmpleado()."\n".
-        "Número de licencia responsable del viaje: ".$this->getNmroLicencia()."\n";
+        "Número de empleado del responsable: ".$this->getNmroEmpleado()."\n".
+        "Número de licencia del responsable: ".$this->getNmroLicencia()."\n";
 
     }
 }
